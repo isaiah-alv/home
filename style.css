@@ -20,7 +20,6 @@ h2 {
 
 .about h1{
    font-family: Raleway, sans-serif;
-   font-size: rem; 
    text-align: right;
 
 }
@@ -31,7 +30,7 @@ h2 {
   font-weight: 100;
   font-style: italic;
   color: pink;
-  padding-bottom: 5.625rem; 
+  padding-bottom: 6.625rem; 
 }
 
 .skill-section-header{
@@ -57,11 +56,14 @@ h2 {
    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
  }
 
+
 .hero {
   height: calc(100vh - 7.5rem); 
   text-align: center;
   background-color: #142828;
   color: #e6eae6;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -81,6 +83,9 @@ h2 {
   color: pink;
 }
 
+.about p{
+  margin-bottom: -30px;
+}
 .about h1 {
   font-size: 8vw; 
 }
@@ -107,12 +112,14 @@ h2 {
 }
 
 .credentials button, 
-.credentials .button-link {
+.credentials .button-link button{
   flex: 1 1 150px;
   max-width: 250px;
-  min-width: 100px;
+  min-width: 150px;
   height: 50px;
   font-size: 1.25rem;
+  font-family: Raleway;
+  transition: color 0.9s ease;
   margin: 0.625rem;
   padding: 0.3125rem;
   text-align: center;
@@ -121,8 +128,11 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   background-color: #fefefe; 
-  border: 1px solid black; 
+  border: none;
   cursor: pointer;
+  border-radius: 8px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+
 }
 
 .credentials .button-link {
@@ -137,6 +147,11 @@ h2 {
   border: none; 
 }
 
+.credentials button:hover{ /* Added hover effect for button-link */
+  background-color: pink;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Increased box-shadow on hover */
+}
+
 @media (max-width: 600px) {
   .credentials button,
   .credentials .button-link,
@@ -148,11 +163,6 @@ h2 {
   }
 }
 
- 
-
-.contact:hover {
-  background-color: pink;
-}
 
 
 .modal {
@@ -187,7 +197,8 @@ h2 {
  }
 
  .skills .container .row .col-md-3 ul li {
-  background-color: #f2f2f2;
+  background-color: #fefefe;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 1.875rem;
   padding: 0.3125rem 0.625rem;
   margin: 0.3125rem;
@@ -205,71 +216,97 @@ h2 {
   list-style-type: none;
 }
 
- 
-/* Bio section */
 .bio {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.25rem; 
+  padding: 0.25rem; 
   box-sizing: border-box;
 }
+
 .bio-card-experience {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   text-align: justify;
-   max-width: 800px;
-   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow effect */
+  padding: 20px; /* Padding inside the card */
+  border-radius: 10px; /* Optional: rounded corners */
 }
 
 .bio-card-experience img {
-   width: 100%; /* Adjust based on preference */
-   max-width: 305px; /* Maximum size of the image */
-   height: auto;
-   border-radius: 35px; /* Optional: for rounded corners */
-   margin-bottom: 20px;
+  width: 100%; /* Adjust based on preference */
+  max-width: 305px; /* Maximum size of the image */
+  height: auto;
+  border-radius: 35px; /* Optional: for rounded corners */
+  margin-bottom: 20px;
 }
 
 /* Responsive Design */
-@media (min-width: 600px) {
-   .bio-card-experience {
-       flex-direction: row;
-       text-align: left;
-   }
+@media (min-width: 1000px) {
+  .bio-card-experience {
+    flex-direction: row;
+    text-align: left;
+  }
 
-   .bio-card-experience img {
-       margin-right: 20px;
-   }
+  .bio-card-experience img {
+    margin-right: 20px;
+  }
 
-   .bio-card-experience p {
-       max-width: 500px;
-   }
+  .bio-card-experience p {
+   max-width: 500px;
+  } 
 }
 
-@media (min-width: 1000px) {
-   .bio {
-       padding: 40px;
-   }
 
-   .bio-card-experience img {
-       max-width: 350px;
-   }
+
+
+.social-media-icons a {
+  color: #000; /* Icon color */
+  margin: 10px;
+  font-size: 24px; /* Icon size */
+  transition: color 0.9s ease;
+  text-decoration: none; 
+  
 }
 
 .social-media-icons {
-   margin-top: 20px;
+  display: flex;
+ flex-direction: row;
+ justify-content: center;
 }
+
+
+@media (min-width: 1000px) {
+  .bio {
+    padding: 40px;
+  }
+
+  .bio-card-experience img {
+    max-width: 350px;
+  }
+
+
 
 .social-media-icons a {
-   color: #000; /* Icon color */
-   margin: 0 10px;
-   font-size: 24px; /* Icon size */
-   transition: color 0.3s ease;
+  color: #142828;
+   margin: 0 10px; 
 }
 
+.social-media-icons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+}
+
+
+
 .social-media-icons a:hover {
-   color: pink; /* Icon color on hover */
+  color: pink; /* Icon color on hover */
 }
 
 
@@ -356,30 +393,30 @@ footer p {
 }
 
 
- .carousel-control-prev-icon,
- .carousel-control-next-icon {
-     background-color: rgba(0, 0, 0, 0.7); 
-     border-radius: 50%; 
-     padding: 10px;
- }
+.iframe-holder {
+  width: 80%; /* Adjust the width to match the carousel */
+  margin: 0 auto; /* Center the holder */
+  border-radius: 15px;
+  background-color: rgba(59, 59, 59, 0.7);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  padding: 20px; /* Add some padding around the carousel */
+  overflow: hidden; /* To respect the border-radius */
+}
 
- .carousel-control-prev-icon,
- .carousel-control-next-icon {
-     width: 55px;
-     height: 50px;
- }
- 
-.iframe-holder{
-
-  width: 100%;
-   border-radius: 15px 15px 0 0;
-   background-color: rgba(0, 0, 0, 0.7); 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 10px;
+  width: 55px;
+  height: 50px;
 }
 
 .iframe-holder .carousel {
-  width: 80%; 
-  margin: 0 auto; /* Centers the carousel */
+  width: 100%; /* Adjust the width to fill the holder */
+  margin: 0; /* Reset any margin */
 }
+
 
 #linkToPages{
   text-align: center;
@@ -432,3 +469,36 @@ footer p {
 .hero-section p {
   font-size: 1.2em;
 }
+
+
+#experience .row {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+#experience .col-md-6 {
+  padding: 20px;
+}
+
+#experience h4 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#experience p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive padding */
+@media (max-width: 767px) {
+  #experience .col-md-6 {
+      padding: 15px;
+  }
+}
+
